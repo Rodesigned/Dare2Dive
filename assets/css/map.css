@@ -27,7 +27,16 @@ span.logo_text_two {
 }
 
 #map {
-    height: 70%;
+	height: 70%;
+	margin-bottom: 20px;
+}
+
+.min {
+	margin-bottom: 20px;
+}
+
+.locationDetails {
+	margin-top: 20px;
 }
 
 .city h1 {
