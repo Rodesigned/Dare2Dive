@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+html, body {
+    height: 100%;
+}
+
+/* Styling for logo / navebar*/
+.navbar-brand {
+	margin-top:10px;
+	font-family: 'Salsa', cursive;
+	font-size: 40px;
+	letter-spacing: 1px;
+	margin-left: 15px;
+}
+
+span.logo_text {
+	font-size: 50px;
+	color:#E6AC1B;
+}
+
+span.logo_text_two {
+	font-size: 110px;
+	color:#E6AC1B;
+}
+
+#map {
+    height: 70%;
+}
+
+.city h1 {
+	font-size: 24px;
+	color:#E6AC1B;
+	text-decoration: none;
+}
+
+
+span.logo_text {
+	font-size: 30px;
+	color:#E6AC1B;
+}
+
+/* Styling for go back button*/
+span.golink {
+	margin-top: 10px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 20px;
+	letter-spacing: 1px;
+	margin-left: 45px;
+	color:#E6AC1B;
+}
+
+
+h1 {
+	font-family: 'Lemon', cursive;
+	font-size: 80px;
+	color: #ffffff;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.navbar-brand {
+	margin-top:10px;
+	font-family: 'Salsa', cursive;
+	letter-spacing: 1px;
+	margin-left: 15px;
+}
+
+.navbar-brand {
+	margin-top:10px;
+	font-family: 'Salsa', cursive;
+	letter-spacing: 1px;
+	margin-left: 15px;
+}
+
+/* social buttons*/
+.socialBtn {
+	position: absolute;
+	width: 100%;
+	margin-left: 1250px;
+	margin-top: 10px;
+	float: right;
+  }
+  
+  .img {
+	  position: relative;
+	  float: left;
+  }
+  
+  .img:hover {
+	  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	  
+  }
+  .img2 {
+	  position: relative;
+	  float: left;
+  }
+  
+  .img2:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+  .img3 {
+	  position: relative;
+	  float: left;
+  }	
+  
+  .img3:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .signIn {
+	  background-color: rgb(250, 6, 6);
+	  color: #ffffff;
+	  font-weight: bold;
+  }
+
+/* Margin bottom by footer height */
+body {
+	margin-bottom: 55px;
+}
+.footer {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px; /* Set the fixed height of the footer here */
+    line-height: 40px; /* Vertically center the text there */
+    color:#f8f7fd;
+    background-color: #1F1F1F;
+    text-align: center;
+}

@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/* CSS Document */
+
+nav, h1 {
+	z-index: 100;
+}
+
+/* Styling for logo / navebar*/
+.navbar-brand {
+	margin-top:10px;
+	font-family: 'Salsa', cursive;
+	font-size: 40px;
+	letter-spacing: 1px;
+	margin-left: 15px;
+}
+
+span.logo_text {
+	font-size: 50px;
+	color:#E6AC1B;
+}
+
+span.logo_text_two {
+	font-size: 110px;
+	color:#E6AC1B;
+}
+
+.header {
+	position: relative;
+	margin-top: 150px;
+    text-align: center;
+	letter-spacing: 1px;
+	z-index: 100;
+}
+
+img.diver {
+	position: absolute;
+	width: 125px;
+	height: 125px;
+	margin-left: 20px;
+	margin-top: -20px;
+	z-index: 900;	
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:link {
+    color: #ffffff;
+}
+
+/* visited link */
+a:visited {
+    color: #ffffff;
+}
+
+/* mouse over link */
+a:hover {
+    color: #ffffff;
+}
+
+p, h1 {
+	position: relative;
+	text-align: center;
+	z-index: 900;
+}
+
+h1 {
+	font-family: 'Lemon', cursive;
+	font-size: 80px;
+	color: #ffffff;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+p {
+	font-family: 'Gafata', sans-serif;
+	font-size: 40px;
+}
+
+p h1 .special {
+	position: relative;
+	text-align: center;
+}
+
+span.logo_text {
+	font-size: 30px;
+	color:#E6AC1B;
+}
+
+span.logo_text_two {
+	font-size: 110px;
+	color:#E6AC1B;
+}
+
+.enter-btn {
+	margin:0px auto;
+	display: block;
+	position: relative;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 300px;
+	height: 75px;
+	z-index: 900;
+	font-family: 'Gafata', sans-serif;
+	font-size: 40px;
+}
+
+.enter-btn {
+  color:#ffffff;
+  background-color: #E6AC1B;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  display:block;
+}
+
+.enter-btn:hover {
+    background-color: #30578C;
+}
+
+ .poster {
+    display: block !important;
+}
+
+ .poster img {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+	z-index: -1;	
+}
+
+.fillWidth {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+p span {
+	font-size: 16px;
+}
+
+/* footer */
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+/* Margin bottom by footer height */
+body {
+	margin-bottom: 55px;
+}
+.footer {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px; /* Set the fixed height of the footer here */
+    line-height: 40px; /* Vertically center the text there */
+    color:#f8f7fd;
+    background-color: #1F1F1F;
+    text-align: center;
+}
