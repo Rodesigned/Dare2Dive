@@ -82,7 +82,7 @@ function initMap() {
         // Zoom property specifies the zoom level for the map
         zoom: 3,
         // Center property tells the API where to center the map. The map coordinates are set in the order: latitude, longitude.Given below are latitude and logitude of Kenya so that user can see all pinned cities when map loads. 
-        center: new google.maps.LatLng(16.884328, -50.080523),
+        center: new google.maps.LatLng(16.716049, -50.168414),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 

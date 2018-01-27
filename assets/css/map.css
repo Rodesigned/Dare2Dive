@@ -95,6 +95,7 @@ h1 {
   .img {
 	  position: relative;
 	  float: left;
+	  margin-right: 10px;
   }
   
   .img:hover {
@@ -104,6 +105,7 @@ h1 {
   .img2 {
 	  position: relative;
 	  float: left;
+	  margin-right: 10px;
   }
   
   .img2:hover {
