@@ -192,7 +192,7 @@ function weatherInfo() {
         method: "GET"
     }).done(function (response) {
         // Transfer content to HTML
-        $(".city").html("<strong>" + response.name + " Weather Details:</strong>");
+        $(".city").html("<strong><h3>" + response.name + " Weather Details:</strong></h3>");
         $(".temp").text("Current Temperature(F): " + response.main.temp + "\xB0");
         $(".desc").text("Weather Descritption:  " + response.weather[0].description);
         $(".humidity").text("Humidity: " + response.main.humidity + "\xB0");
@@ -361,7 +361,7 @@ function skydivingLocationDetails() {
         var searchResults = locationResponse.result;
 
         // Transfer content to HTML
-        $(".locationDetails").html("<strong>Skydiving Location Details: </strong>");
+        $(".locationDetails").html("<h3>Skydiving Location Details: </h3");
         $(".locationName").text("Name: " + searchResults.name);
         $(".locationAddress").text("Address: " + searchResults.formatted_address);
         $(".locationPhone").text("International Phone Number: " + searchResults.international_phone_number);
@@ -401,6 +401,6 @@ function skydivingLocationDetails() {
 // Ready Function
 $(document)
     .ready(function () {
-        $(".btn").hide();
+        $(".btn").show();
         initMap();
     });

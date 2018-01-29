@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CDN and Style Sheet -->
+	  <!-- Title of Page  -->
+    <title>Dare2Dive</title>
+	<!-- Bootstrap CDN and Style Sheet -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/map.css">
@@ -14,18 +15,14 @@
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Gafata|Lemon|Rammetto+One|Salsa" rel="stylesheet">
-
-    <!-- Google map API and places library -->
+	<!-- Google map API and places library -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CGQ_8bl8ZaJQa5hbPzq14eRiNJKwLC4&libraries=places"></script>
-
-    <!-- Title of Page  -->
-    <title>Dare2Dive</title>
 </head>
 
 <body>
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Dare<span class="logo_text">2</span>Dive</a>
+            <a class="navbar-brand" href="index.html">Dare<span class="logo_text_two">2</span>Dive</a>
             <a class="navbar-brand" href="map.html"><span class="golink">Go Back</span></a>
             
 
@@ -43,13 +40,23 @@
             <button class="text-center btn btn-sm signIn">Sign In with Google</button>
         </div>
     </nav>
-            
-    <!-- Div to display map -->
+	
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">	 
+<span class="open_tab" style="font-size:18px; cursor:pointer; color: #ffffff;" onclick="openNav()">&#9776; Open for Weather Details </span>
+</nav>
+	
+
+  <!-- Div to display map -->
     <div class="col-lg-12" id="map">
 
-    </div>
+    </div>     
+   			
 
-    <!-- Retrieved data will be dumped here -->
+<!-- Retrieved data will be dumped here -->	
+<div id="mySidenav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+<div id="weather_details">		
     <div class="city"></div>
     <div class="temp"></div>
     <div class="desc"></div>
@@ -57,13 +64,27 @@
     <div class="wind"></div>
     <div class="max"></div>
     <div class="min"></div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+	<br >
+	
+<!-- Button trigger modal -->
+    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
         5 Day Weather Forecast
     </button>
 
-    <!-- Modal to display 5-day weather forecast-->
+<!-- Divs to display skydiving center information -->
+    <div class="locationDetails"></div>
+    <div class="locationName"></div>
+    <div class="locationAddress"></div>
+    <div class="locationPhone"></div>
+    <div class="locationWebsite"></div>
+    <div class="locationRating"></div>
+    <div class="locationHours"></div>
+    <br>
+    <div class="locationPhotos"></div>
+  
+</div>  
+	</div>
+ <!-- Modal to display 5-day weather forecast-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -74,7 +95,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-hover" id='train-table'>
+                    <table class="table table-hover" id="train-table">
                         <thead>
                             <tr>
                                 <th>Date/Time</th>
@@ -98,24 +119,7 @@
             </div>
         </div>
     </div>
-    <br>
-    <!-- Divs to display skydiving center information -->
-    <div class="locationDetails"></div>
-    <div class="locationName"></div>
-    <div class="locationAddress"></div>
-    <div class="locationPhone"></div>
-    <div class="locationWebsite"></div>
-    <div class="locationRating"></div>
-    <div class="locationHours"></div>
-    <br>
-    <div class="locationPhotos"></div>
-  
-
-    <br>
-    <br>
-    <br>
-    <br>
-
+ 
     <!-- Footer -->
     <footer class="footer col-sm-12">
         <div class="container">
