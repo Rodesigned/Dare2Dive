@@ -24,13 +24,13 @@ var config = {
     projectId: "project1-firebase-auth",
     storageBucket: "project1-firebase-auth.appspot.com",
     messagingSenderId: "558796916951"
- };
- 
- firebase.initializeApp(config);
- 
- var provider = new firebase.auth.GoogleAuthProvider();
- 
- $(document).on("click", ".signIn", function () {
+};
+
+firebase.initializeApp(config);
+
+var provider = new firebase.auth.GoogleAuthProvider();
+
+$(document).on("click", ".signIn", function () {
     console.log("Sign In button clicked");
     firebase.auth().signInWithPopup(provider).then(function (result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -40,7 +40,7 @@ var config = {
         var user = result.user;
         console.log(user);
         // window.location = '/test-project-1.2/map.html';
- 
+
         // ...
     }).catch(function (error) {
         // Handle Errors here.
@@ -56,9 +56,9 @@ var config = {
     $(this).removeClass('signIn')
         .addClass('signOut')
         .html('Sign Out Of Google');
- });
- 
- $(document).on('click', '.signOut', function () {
+});
+
+$(document).on('click', '.signOut', function () {
     firebase.auth().signOut().then(function () {
         // Sign-out successful.
         // window.location = '/index.html';
@@ -68,7 +68,22 @@ var config = {
     $(this).removeClass('signOut')
         .addClass('signIn')
         .html('Sign In with Google');
- });
+});
+
+
+var openNav;
+var closeNav;
+
+// function openNav() {
+//     document.getElementById("mySidenav").style.width = "350px";
+//     // document.getElementById("#main").style.marginLeft = "350px";
+// }
+
+// function closeNav() {
+//     document.getElementById("mySidenav").style.width = "0";
+//     document.getElementById("#main").style.marginLeft= "0";
+// }
+
 
 // Function that initializes and adds the map when the web page loads
 function initMap() {
@@ -167,14 +182,15 @@ function initMap() {
                             title: place.name
                         });
                     })
+                    // Call openNav function to open slide out to display weather and location details
+                    openNav();
                     // Call skydivingLocationDetails function to get skydiving location details
-                    skydivingLocationDetails();
+                    $(".btnLocation").on("click", skydivingLocationDetails());
                 });
                 // Call wetherInfo function to get weather details of city when user click on city icon
                 weatherInfo();
                 //call weatherForrecast function to get 5 day forecast when user clicks on city
-                $(".btn").show();
-                $(".btn").on("click", weatherForecast());
+                $(".btnWeather").on("click", weatherForecast());
             }));
         })(i);
     }
@@ -208,142 +224,33 @@ function weatherForecast() {
     var APIKey = "999df4c3925000e8f0fcd5765a05caf2";
     // Query URL
     var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + searchLat + "&lon=" + searchLong + "&units=imperial&appid=" + APIKey;
+    console.log(forecastURL);
     // ajax call
     $.ajax({
         url: forecastURL,
         method: "GET"
     }).done(function (response) {
         // Appending data from weather API to table on html - to show as a modal
-        $("#train-table > tbody").append(
-            "<tr><td>" + response.list[1].dt_txt +
-            "</td><td>" + response.list[1].main.temp + "\xB0" +
-            //"</td><td" + response.list[1].weather.icon +
+        console.log(response.list);
+        for (var i = 0; i < response.list.length; i++) {
 
-            "</tr><td>" + response.list[2].dt_txt +
-            "</td><td>" + response.list[2].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[3].dt_txt +
-            "</td><td>" + response.list[3].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[4].dt_txt +
-            "</td><td>" + response.list[4].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[5].dt_txt +
-            "</td><td>" + response.list[5].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[6].dt_txt +
-            "</td><td>" + response.list[6].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[7].dt_txt +
-            "</td><td>" + response.list[7].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[8].dt_txt +
-            "</td><td>" + response.list[8].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[9].dt_txt +
-            "</td><td>" + response.list[9].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[10].dt_txt +
-            "</td><td>" + response.list[10].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[11].dt_txt +
-            "</td><td>" + response.list[11].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[12].dt_txt +
-            "</td><td>" + response.list[12].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[13].dt_txt +
-            "</td><td>" + response.list[13].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[14].dt_txt +
-            "</td><td>" + response.list[14].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[15].dt_txt +
-            "</td><td>" + response.list[15].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[16].dt_txt +
-            "</td><td>" + response.list[16].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[17].dt_txt +
-            "</td><td>" + response.list[17].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[18].dt_txt +
-            "</td><td>" + response.list[18].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[19].dt_txt +
-            "</td><td>" + response.list[19].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[20].dt_txt +
-            "</td><td>" + response.list[20].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[21].dt_txt +
-            "</td><td>" + response.list[21].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[22].dt_txt +
-            "</td><td>" + response.list[22].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[23].dt_txt +
-            "</td><td>" + response.list[23].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[24].dt_txt +
-            "</td><td>" + response.list[24].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[25].dt_txt +
-            "</td><td>" + response.list[25].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[26].dt_txt +
-            "</td><td>" + response.list[26].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[27].dt_txt +
-            "</td><td>" + response.list[27].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[28].dt_txt +
-            "</td><td>" + response.list[28].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[29].dt_txt +
-            "</td><td>" + response.list[29].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[30].dt_txt +
-            "</td><td>" + response.list[30].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[31].dt_txt +
-            "</td><td>" + response.list[31].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[32].dt_txt +
-            "</td><td>" + response.list[32].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[33].dt_txt +
-            "</td><td>" + response.list[33].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[34].dt_txt +
-            "</td><td>" + response.list[34].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[35].dt_txt +
-            "</td><td>" + response.list[35].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[36].dt_txt +
-            "</td><td>" + response.list[36].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[37].dt_txt +
-            "</td><td>" + response.list[37].main.temp + "\xB0" +
-
-            "</tr><td>" + response.list[38].dt_txt +
-            "</td><td>" + response.list[38].main.temp + "\xB0" +
-
-            //   "</tr><td>" + response.list[39].dt_txt +
-            //"</td><td>" + response.list[39].main.temp + "\xB0"  +
-
-            "</td></tr>");
+            $("#weather-table > tbody").append(
+                "<tr><td>" + response.list[i].dt_txt +
+                "</td><td>" + response.list[i].main.temp + "\xB0" +
+                "</td></tr>"
+            );
+        }
     });
 }
 
 // Function to get weather info from city
 function skydivingLocationDetails() {
     /// API key for Google Places API Web Service
-    // var googleWebServiceAPIKey = "AIzaSyCopXFH0eqDJPzFsLPyq27LHvsVcWwQk9s";
-    var googleWebServiceAPIKey = "AIzaSyD6TtKmU29ucB4bMn_4ag_XpsPK7IUR-C4";
+    var googleWebServiceAPIKey = "AIzaSyCopXFH0eqDJPzFsLPyq27LHvsVcWwQk9s";
+    // var googleWebServiceAPIKey = "AIzaSyD6TtKmU29ucB4bMn_4ag_XpsPK7IUR-C4";
     // Query URL
     var locationQueryURL = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + locationPlaceID + "&key=" + googleWebServiceAPIKey;
+    console.log(locationQueryURL);
 
     // Code to fix CORS issue
     jQuery.ajaxPrefilter(function (options) {
@@ -360,8 +267,7 @@ function skydivingLocationDetails() {
         // Storing result of search in a variable
         var searchResults = locationResponse.result;
 
-        // Transfer content to HTML
-        $(".locationDetails").html("<strong>Skydiving Location Details: </strong>");
+        // Transfer content to skydiving details modal
         $(".locationName").text("Name: " + searchResults.name);
         $(".locationAddress").text("Address: " + searchResults.formatted_address);
         $(".locationPhone").text("International Phone Number: " + searchResults.international_phone_number);
@@ -390,10 +296,12 @@ function skydivingLocationDetails() {
             var imageDiv = $("<div class='image-div'>");
             var testImage = $("<img>");
             var imgRef = pictures[i].photo_reference;
-            var photoURL = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" + imgRef + "&sensor=false&maxheight=500&maxwidth=500&key=" + googleWebServiceAPIKey;
+            var photoURL = "https://maps.googleapis.com/maps/api/place/photo?photoreference=" + imgRef + "&sensor=false&maxheight=400&maxwidth=400&key=" + googleWebServiceAPIKey;
             testImage.attr("src", photoURL);
             imageDiv.append(testImage);
+            imageDiv.append($("<br>"));
             $(".locationPhotos").append(imageDiv);
+            $(".locationPhotos").append($("<br>"));
         }
     });
 }
@@ -401,6 +309,5 @@ function skydivingLocationDetails() {
 // Ready Function
 $(document)
     .ready(function () {
-        $(".btn").hide();
         initMap();
     });
